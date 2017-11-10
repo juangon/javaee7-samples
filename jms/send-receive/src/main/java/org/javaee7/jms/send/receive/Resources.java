@@ -1,5 +1,6 @@
 package org.javaee7.jms.send.receive;
 
+import javax.ejb.Singleton;
 import javax.jms.JMSDestinationDefinition;
 import javax.jms.JMSDestinationDefinitions;
 
@@ -10,26 +11,27 @@ import javax.jms.JMSDestinationDefinitions;
 @JMSDestinationDefinitions({
     @JMSDestinationDefinition(
         name = Resources.CLASSIC_QUEUE,
-        resourceAdapter = "jmsra",
+        //resourceAdapter = "jmsra",
         interfaceName = "javax.jms.Queue",
         destinationName = "classicQueue",
         description = "My Sync Queue"),
     @JMSDestinationDefinition(name = Resources.ASYNC_QUEUE,
-        resourceAdapter = "jmsra",
+        //resourceAdapter = "jmsra",
         interfaceName = "javax.jms.Queue",
         destinationName = "asyncQueue",
         description = "My Async Queue"),
     @JMSDestinationDefinition(name = Resources.SYNC_APP_MANAGED_QUEUE,
-        resourceAdapter = "jmsra",
+        //resourceAdapter = "jmsra",
         interfaceName = "javax.jms.Queue",
         destinationName = "syncAppQueue",
         description = "My Sync Queue for App-managed JMSContext"),
     @JMSDestinationDefinition(name = Resources.SYNC_CONTAINER_MANAGED_QUEUE,
-        resourceAdapter = "jmsra",
+        //resourceAdapter = "jmsra",
         interfaceName = "javax.jms.Queue",
         destinationName = "syncContainerQueue",
         description = "My Sync Queue for Container-managed JMSContext")
 })
+@Singleton
 public class Resources {
     public static final String SYNC_APP_MANAGED_QUEUE = "java:app/jms/mySyncAppQueue";
     public static final String SYNC_CONTAINER_MANAGED_QUEUE = "java:app/jms/mySyncContainerQueue";

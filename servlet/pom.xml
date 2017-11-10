@@ -29,12 +29,14 @@
         <module>programmatic-registration</module>
         
         <!-- Security samples assuming the container identity store -->
+
+        <!-- TODO need to implement for Wildfly
         <module>security-basicauth</module>
         <module>security-form-based</module>
         <module>security-programmatic</module>
         <module>security-deny-uncovered</module>
 		<module>security-annotated</module>
-        <module>security-basicauth-omission</module>
+        <module>security-basicauth-omission</module>-->
     </modules>
 
     <dependencies>
@@ -42,6 +44,11 @@
             <groupId>org.javaee7</groupId>
             <artifactId>test-utils</artifactId>
             <version>${project.version}</version>
+        </dependency>
+	<dependency>
+            <groupId>org.jboss.arquillian.container</groupId>
+            <artifactId>arquillian-container-test-api</artifactId>
+	    <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

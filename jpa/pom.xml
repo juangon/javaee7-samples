@@ -15,12 +15,15 @@
     <name>Java EE 7 Sample: jpa</name>
 
     <modules>
-        <module>aggregate-function-in-select</module>
+         <!-- https://hibernate.atlassian.net/browse/HHH-10337 -->
+	 <!--<module>aggregate-function-in-select</module>-->
         <module>criteria</module>
-        <module>datasourcedefinition</module>
+	<!--Fixed by https://issues.jboss.org/browse/ARQ-2107 -->
+	<!--<module>datasourcedefinition</module>-->
         <module>datasourcedefinition-webxml-pu</module>
         <module>datasourcedefinition-annotation-pu</module>
-        <module>datasourcedefinition-applicationxml-pu</module>
+         <!-- https://issues.jboss.org/browse/SWARM-829 -->
+        <!--<module>datasourcedefinition-applicationxml-pu</module>-->
         <module>dynamic-named-query</module>
         <module>entitygraph</module>
         <module>listeners</module>
@@ -30,7 +33,8 @@
         <module>jndi-context</module>
         <module>locking-optimistic</module>
         <module>locking-pessimistic</module>
-        <module>ordercolumn</module>
+	<!-- https://issues.jboss.org/browse/ARQ-2109 -->
+        <!--<module>ordercolumn</module>-->
         <module>pu-typesafe</module>
         <module>schema-gen-metadata</module>
         <module>schema-gen-scripts</module>
@@ -40,7 +44,8 @@
         <module>native-sql</module>
         <module>native-sql-resultset-mapping</module>
         <module>unsynchronized-pc</module>
-        <module>extended-pc</module>
+	<!-- https://issues.jboss.org/browse/ARQ-2109 -->
+        <!--<module>extended-pc</module> -->
         <module>jpa-converter</module>
         <module>default-datasource</module>
     </modules>

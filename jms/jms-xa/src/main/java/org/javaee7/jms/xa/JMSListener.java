@@ -14,7 +14,7 @@ import javax.jms.MessageListener;
 
 @MessageDriven(
     activationConfig = { 
-        @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "java:app/jms/queue"),
+        @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "java:/app/jms/queue"),
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"), }
 )
 public class JMSListener implements MessageListener {

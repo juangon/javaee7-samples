@@ -14,7 +14,7 @@ public class UserManager {
     @Inject
     private JMSSender jmsSender;
 
-    public User register(String email) {
+    private User register(String email, boolean transacted) {
         User user = new User(email);
         
         entityManager.persist(user);
@@ -22,7 +22,9 @@ public class UserManager {
         String msg = "Hello " + email + " " + System.currentTimeMillis();
         
         System.out.println("Sending JMS message " + msg);
-        jmsSender.sendMessage(msg);
+        if (transacted) {
+            jmsSender.sendMessage(msg);
+        }
         
         return user;
     }
